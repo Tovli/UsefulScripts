@@ -1,0 +1,2 @@
+dotnet ef --startup-project ../shoplink migrations add RevenuesAddInsertedDateDefaultValue
+dotnet ef --startup-project ../shoplink database update
