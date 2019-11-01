@@ -1,7 +1,9 @@
 
 select MemberId, MemberFirstName, Email, PhoneNumber,
  shopId, shopName
-
+ from (
+ select MemberId, MemberFirstName, Email, PhoneNumber,
+ shopId, shopName
 from members m join roles r on m.RoleId = r.RoleId
 join RoleChains rc on r.RoleId = rc.RoleId
 join Chains c on rc.ChainId = c.ChainId
@@ -18,4 +20,4 @@ select MemberId, MemberFirstName, Email, PhoneNumber,
  srsc.shopId, shopName
  from members m join roles r on m.RoleId = r.RoleId
 join RoleShoppingCenters rsc on r.RoleId = rsc.RoleId
-join shops srsc on rsc.ShoppingCenterId = srsc.ShoppingCenterId
+join shops srsc on rsc.ShoppingCenterId = srsc.ShoppingCenterId) a 
