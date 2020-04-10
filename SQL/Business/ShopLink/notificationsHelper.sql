@@ -211,8 +211,8 @@ MemberId,
  2 as notificationType, -- 1=email, 2=sms
 12 as dayOfMonth, 
 '06:00:00' as timeofday, 
-N'שלום רב. לנוחיותך אנו מצרפים פעם נוספת את הלינק באמצעותו הנך מתבקש לדווח את הפדיונות לחודש {{{Month}}}. נודה על הזנת הפדיון בהקדם. בכל שאלה ניתן ליצור קשר במייל חוזר או בטלפון 077-6001701. ככל שהנך מדווח רק ביחס לחנות אחת הינך יכול לרשום את הפדיון ללא נקודות ב SMS ולשלוח אותו בחזרה, ואין צורך להכנס לאתר. {{{MagicLink}}}' as notificationBody,
-N'תזכורת בדבר לינק לקליטת פדיונות לחודש {{{Month}}}' as notificationTitle
+N'נודה להזנת הפדיון לביג בהתאם להודעה שקבלתם בתחילת החודש' as notificationBody,
+N'שלום' as notificationTitle
 from members
 where NotificationStrategy in (1,13,5,53)
 union
@@ -314,8 +314,8 @@ MemberId,
  2 as notificationType, -- 1=email, 2=sms
 19 as dayOfMonth, 
 '06:00:00' as timeofday, 
-N'שלום רב. לנוחיותך אנו מצרפים פעם נוספת את הלינק באמצעותו הנך מתבקש לדווח את הפדיונות לחודש {{{Month}}}. נודה על הזנת הפדיון בהקדם. בכל שאלה ניתן ליצור קשר במייל חוזר או בטלפון 077-6001701. ככל שהנך מדווח רק ביחס לחנות אחת הינך יכול לרשום את הפדיון ללא נקודות ב SMS ולשלוח אותו בחזרה, ואין צורך להכנס לאתר. {{{MagicLink}}}' as notificationBody,
-N'תזכורת בדבר לינק לקליטת פדיונות לחודש {{{Month}}}' as notificationTitle
+N'נודה להזנת הפדיון לביג בהתאם להודעה שקבלתם בתחילת החודש' as notificationBody,
+N'שלום' as notificationTitle
 from members
 where NotificationStrategy in (1,13,2,23,3,33,5,53)
 union
