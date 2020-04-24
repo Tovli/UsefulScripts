@@ -10,6 +10,11 @@ select * from shops s left join
 members m on m.RoleId = rs.RoleId 
 where m.MemberId is null and (rs.RoleId is null)
 
+-- Members without attached shops
+select * from Members m left join RoleShops rs on m.RoleId = rs.RoleId
+where rs.RoleId is null
+and MemberId > 40
+
 -- Duplicate shops name
 select 
 sc.ShoppingCenterId, ShoppingCenterName, ShoppingCenterGroupId, ShopName, count(1) numOfDuplicates
