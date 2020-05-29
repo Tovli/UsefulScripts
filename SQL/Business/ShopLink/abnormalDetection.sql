@@ -1,7 +1,30 @@
 -- abnormal notifications
 select * from members where NotificationStrategy in (1,12,2,22,3,32,5,52) and email like '%mallshoplinkinternal%' 
+
+-----------------  No mail but notification is mail related FIX
+--update Members set NotificationStrategy = 53
+--where NotificationStrategy in (5,52) and MemberId in 
+--(select memberid from members where NotificationStrategy in (1,12,2,22,3,32,5,52) and email like '%mallshoplinkinternal%' )
+
+--update Members set NotificationStrategy = 13
+--where NotificationStrategy in (1,12) and MemberId in 
+--(select memberid from members where NotificationStrategy in (1,12,2,22,3,32,5,52) and email like '%mallshoplinkinternal%' )
+
+
 select * from members where NotificationStrategy in (1,13,2,23,3,33,5,53) and PhoneNumber = 0
 
+-----------------  No phone but notification is phone related FIX
+--update Members set NotificationStrategy = 52
+--where NotificationStrategy in (5,53) and MemberId in 
+--(select MemberId from members where NotificationStrategy in (1,13,2,23,3,33,5,53) and PhoneNumber = 0 )
+
+--update Members set NotificationStrategy = 12
+--where NotificationStrategy in (1,13) and MemberId in 
+--(select MemberId from members where NotificationStrategy in (1,13,2,23,3,33,5,53) and PhoneNumber = 0 )
+
+--update Members set NotificationStrategy = 22
+--where NotificationStrategy in (2,23) and MemberId in 
+--(select MemberId from members where NotificationStrategy in (1,13,2,23,3,33,5,53) and PhoneNumber = 0 )
 
 
 -- shops without attached member
