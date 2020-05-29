@@ -58,9 +58,23 @@ order by email
 select * from shops s left join ShopSections shs on s.ShopId = shs.ShopId
 where shs.ShopId is null
 
+--------------- Missing sections FIX--------------------
+--insert into ShopSections (ShopId,SectionId)
+--select s.shopId, 1 from shops s left join ShopSections shs on s.ShopId = shs.ShopId
+--where shs.ShopId is null
+
 -- Missing shopping center group sections
 select * from shops s left join 
 ShopSections shs on s.ShopId = shs.ShopId join
 ShoppingCenters sc on s.ShoppingCenterId = sc.ShoppingCenterId left join
 ShoppingCenterGroupSections scgs on scgs.ShoppingCenterGroupId = sc.ShoppingCenterGroupId and scgs.SectionId = shs.SectionId
 where scgs.SectionExternalId is null
+
+--------- Missing shopping center group sections Naive Fix -----------------
+--insert into ShoppingCenterGroupSections (ShoppingCenterGroupId, SectionId, SectionExternalId)
+--select distinct sc.shoppingcentergroupid, shs.sectionid, shs.sectionid as SectionExternalId
+--from shops s left join 
+--ShopSections shs on s.ShopId = shs.ShopId join
+--ShoppingCenters sc on s.ShoppingCenterId = sc.ShoppingCenterId left join
+--ShoppingCenterGroupSections scgs on scgs.ShoppingCenterGroupId = sc.ShoppingCenterGroupId and scgs.SectionId = shs.SectionId
+--where scgs.SectionExternalId is null
