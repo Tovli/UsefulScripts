@@ -113,7 +113,7 @@ MemberId,
  2 as notificationType, -- 1=email, 2=sms
 1 as dayOfMonth, 
 '06:00:00' as timeofday, 
-N'לחנות אחת הזינו פדיון אפריל בביג במסרון חוזר או כנסו ל {{{MagicLink}}}' as notificationBody,
+N'לחנות אחת הזינו פדיון {{{Month}}} בביג במסרון חוזר או כנסו ל {{{MagicLink}}}' as notificationBody,
 N'שלום' as notificationTitle
 from members
 where NotificationStrategy in (1,13,2,23,3,33,5,53)
