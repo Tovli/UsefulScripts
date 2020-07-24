@@ -32,6 +32,7 @@ select * from shops s left join
 (select * from roleshops where roleid > 29) rs on rs.ShopId = s.ShopId left join 
 members m on m.RoleId = rs.RoleId 
 where m.MemberId is null and (rs.RoleId is null)
+and (deactivationdate > GETDATE() or DeactivationDate is null)
 
 -- Members without attached shops
 select * from Members m left join RoleShops rs on m.RoleId = rs.RoleId
@@ -101,3 +102,8 @@ where scgs.SectionExternalId is null
 --ShoppingCenters sc on s.ShoppingCenterId = sc.ShoppingCenterId left join
 --ShoppingCenterGroupSections scgs on scgs.ShoppingCenterGroupId = sc.ShoppingCenterGroupId and scgs.SectionId = shs.SectionId
 --where scgs.SectionExternalId is null
+
+-- Check for duplicate roles
+select rolename from roles 
+group by rolename
+having count(1) > 1
