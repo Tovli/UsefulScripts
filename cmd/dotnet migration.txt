@@ -1,2 +1,7 @@
+
+cd E:\Code\ShopLink\MallShopLink\MallshopResourceAccess
+dotnet ef --startup-project ../mallshoplink.API migrations add AddMonthlyProps --context MallshopDbContext
+
+
 dotnet ef --startup-project ../shoplink.API migrations add MigrationName --context UserDbContext
 dotnet ef --startup-project ../shoplink.API database update --context UserDbContext
